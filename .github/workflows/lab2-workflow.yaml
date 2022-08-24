@@ -32,7 +32,7 @@ jobs:
           go-version-file: ./src/go.mod
       - name: Run Code Coverage Checking
         working-directory: ./src
-        run: go test -coverprofile coverage.out
+        run: go test -coverprofile coverage.out ./...
       - name: Reformat coverage report
         working-directory: ./src
         run: go tool -cover coverage.out -o coverage.txt
